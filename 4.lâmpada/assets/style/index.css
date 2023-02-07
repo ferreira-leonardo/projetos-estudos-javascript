@@ -1,0 +1,1 @@
+body{height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}#div-central{display:flex;flex-direction:column;}#btns{width:400px;display:flex;justify-content:space-between;gap:50px;}#btns > input{padding:10px;width:250px;}

@@ -1,0 +1,21 @@
+body{
+    background: url("../img/background/xmen-backgraund-level2.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    max-width: 1000px;
+}
+
+.grid{
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 1000px;
+}
+
+.back{
+    background: url('../img/fundo-card/xmen-fundo-card-level2.jpg');
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+}
