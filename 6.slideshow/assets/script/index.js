@@ -41,3 +41,24 @@ const previous = () => {
 }
 
 btnPrevious.addEventListener('click', previous);
+
+//Permite passar as fotos usando o teclado
+window.addEventListener('keydown', (evento) => {
+    if(evento.key == 'ArrowRight'){
+        next()
+        btnNext.style.background = '#15ff00'
+        btnNext.style.fontSize = '70px'
+    } else if(evento.key == 'ArrowLeft'){
+        previous()
+        btnPrevious.style.background = '#15ff00'
+        btnPrevious.style.fontSize = '70px'
+    } 
+
+    setTimeout(() => {
+        btnNext.style.background = ''
+        btnNext.style.fontSize = '50px'
+        btnPrevious.style.background = ''
+        btnPrevious.style.fontSize = '50px'
+    }, 500)
+    
+})
