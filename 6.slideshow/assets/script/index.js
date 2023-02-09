@@ -4,12 +4,12 @@ let btnPrevious = document.getElementById('previous');
 
 //Objeto JSON das imagens
 const images = [
-    {'id': '1', 'url' : 'assets/img/chrono.jpg'},
-    {'id': '2', 'url' : 'assets/img/inuyasha.jpg'},
-    {'id': '3', 'url' : 'assets/img/ippo.png'},
-    {'id': '4', 'url' : 'assets/img/tenchi.jpg'},
-    {'id': '5', 'url' : 'assets/img/tenjhotenge.jpg'},
-    {'id': '6', 'url' : 'assets/img/yuyuhakusho.jpg'},
+    {'url' : 'assets/img/chrono.jpg'},
+    {'url' : 'assets/img/inuyasha.jpg'},
+    {'url' : 'assets/img/ippo.png'},
+    {'url' : 'assets/img/tenchi.jpg'},
+    {'url' : 'assets/img/tenjhotenge.jpg'},
+    {'url' : 'assets/img/yuyuhakusho.jpg'},
 ]
 
 //Função que carrega as imagens
