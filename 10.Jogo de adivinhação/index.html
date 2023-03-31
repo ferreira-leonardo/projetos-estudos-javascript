@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+
+    <style>
+        input{
+            padding: 30px;
+        }
+
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body onload="sortear()">
+
+    <h1>Advinhe o número</h1>
+
+    <input type="button" value="Click para iniciar" onclick="jogar()" id="butao">
+
+    
+
+    <p id="demo">O resultado vai aparecer aqui...</p>
+
+    <script>
+        let num = 0
+        
+        function sortear(){
+            let min = 1;
+            let max = 100;
+            let dif = max - min
+            let aleatorio = Math.random() //gera um valor aleatorio entr 0 e 1
+            num = min + Math.trunc(dif * aleatorio)
+        }
+
+        function jogar(){
+            let digJogador = Number(prompt("Qual o seu palpite?"))
+
+
+            if(digJogador < num){
+                document.getElementById("demo").innerHTML += `<br>Você falou o número ${digJogador}. Meu número é <strong>MAIOR!</strong>`
+            } else if (digJogador > num){
+                document.getElementById("demo").innerHTML += `<br>Você falou o número ${digJogador}. Meu número é <strong>MENOR!</strong>`
+            } else if (digJogador === num ){
+                document.getElementById("demo").innerHTML += `<br><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o número ${num}<br><br>
+                Atualize a página para jogar novamente
+                `
+
+                document.getElementById('butao').style.display = 'none'
+            }
+        }
+    </script>
+    
+</body>
+</html>

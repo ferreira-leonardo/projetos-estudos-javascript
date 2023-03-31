@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+
+    <style>
+        input{
+            padding: 30px;
+        }
+
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body onload="sortear()">
+
+    <h1>É par ou ímpar</h1>
+
+    <input type="button" value="Contar de 1 a quanto?" onclick="jogar()" id="butao">
+
+    <p id="demo">Contando...<br></p>
+
+    <script>
+        
+
+        function jogar() {
+            let space = document.getElementById("demo");
+            let valor = Number(prompt("Quer contar até quanto?"));
+            let escolha = prompt("Como você deseja contar?\n[1]Contagem simples\n[2]Marcando os pares\n[3]Mostar apenas os pares");
+
+            
+            if(escolha == 1) {
+                let i = 1;
+
+                // Funciona como se fosse um loop for, o bloco vai se repetir a cada 0 milisegundos
+                // quando a condição do if não for satisfeita, o clearInterval irá encerrar a repetição
+                const countInterval = setInterval(() => {
+                    if (i <= valor) {
+                        space.innerHTML += `${i} - `;
+                        i++;
+                    } else {
+                        clearInterval(countInterval);
+                    }
+                }, 0);
+            } else if(escolha == 2) {
+                space.innerHTML = "Muito bem, marcaremos apenas os pares de amarelo<br>";
+                let i = 1;
+                const countInterval = setInterval(() => {
+                    if (i <= valor) {
+                        if (i % 2 == 0) {
+                            space.innerHTML += `<mark>${i}</mark> - `;
+                        } else {
+                            space.innerHTML += `${i} - `;
+                        }
+                        i++;
+                    } else {
+                        clearInterval(countInterval);
+                    }
+                }, 0);
+            } else if (escolha == 3) {
+                space.innerHTML = "Muito bem, mostraremos apenas os pares<br>";
+                let i = 1;
+                const countInterval = setInterval(() => {
+                    if (i <= valor) {
+                        if (i % 2 == 0) {
+                            space.innerHTML += `${i} - `;
+                        }
+                        i++;
+                    } else {
+                        clearInterval(countInterval);
+                    }
+                }, 0);
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
